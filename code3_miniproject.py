@@ -1,12 +1,12 @@
 labels = ["Tutorial Group","Student ID","School","Name","Gender","CGPA"]
 
 with open('./records.csv', mode ='r') as file:    
-    full_list = [] #entire file, list of each records
-    next(file) #skips heading line
+    full_list = [] 
+    next(file) 
     for lines in file:
-        line = {} #each record as dictionary
-        lines = lines.rstrip() #each record as csv
-        lines = lines.split(",") #makes list out of csv files
+        line = {} 
+        lines = lines.rstrip() 
+        lines = lines.split(",") 
         for i in range(len(lines)):
             if labels[i] == "CGPA":
                 line[labels[i]] = float(lines[i])
@@ -28,7 +28,7 @@ def sortTut(list):
     return tutgrp
 sorted_list = sortTut(full_list)
 
-def sortGender(list): #is it full_list
+def sortGender(list): 
     gender = {}
     sum_gpa = 0
     for i in list:
